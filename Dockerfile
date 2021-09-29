@@ -7,4 +7,7 @@ RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
-ENTRYPOINT [ "python", "app.py" ]
+ENV FLASK_APP=app
+ENV FLASK_ENV=development
+
+ENTRYPOINT ["flask", "run",  "--host", "0.0.0.0"]
